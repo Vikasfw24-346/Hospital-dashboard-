@@ -13,19 +13,19 @@ export default function TreatmentEffectiveness() {
       <table className="min-w-full divide-y divide-gray-200">
         <thead>
           <tr>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Treatment</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Success Rate</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Avg. Duration</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Cost Effectiveness</th>
+            <th className="px-6 py-3 text-left text-lg font-medium text-white uppercase tracking-wider">Treatment</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Success Rate</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Avg. Duration</th>
+            <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Cost Effectiveness</th>
           </tr>
         </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
+        <tbody className="bg-slate-400 divide-y divide-gray-200">
           {treatments.map((treatment) => (
             <tr key={treatment.name}>
-              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{treatment.name}</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{treatment.successRate}%</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{treatment.averageDuration} weeks</td>
-              <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{treatment.costEffectiveness}%</td>
+              <td className="px-6 py-4 whitespace-nowrap text-lg font-medium text-gray-900">{treatment.name}</td>
+              <td className="px-6 py-4 whitespace-nowrap text-lg text-white">{treatment.successRate}%</td>
+              <td className="px-6 py-4 whitespace-nowrap text-lg text-white">{treatment.averageDuration} weeks</td>
+              <td className="px-6 py-4 whitespace-nowrap text-lg text-white">{treatment.costEffectiveness}%</td>
             </tr>
           ))}
         </tbody>
