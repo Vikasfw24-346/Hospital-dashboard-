@@ -19,11 +19,11 @@ export default function UtilizationMetrics() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
       {metrics.map((metric) => (
-        <div key={metric.resource} className="bg-gray-50 rounded-lg p-6">
-          <h3 className="text-lg font-medium text-gray-900 mb-4">{metric.resource}</h3>
+        <div key={metric.resource} className="bg-emerald-300 rounded-lg p-6">
+          <h3 className="text-2xl font-medium text-gray-900 mb-4">{metric.resource}</h3>
           <div className="space-y-4">
             <div>
-              <div className="flex justify-between text-sm font-medium">
+              <div className="flex justify-between text-lg font-medium">
                 <span>Usage</span>
                 <span>{metric.usage}%</span>
               </div>
@@ -35,8 +35,8 @@ export default function UtilizationMetrics() {
               </div>
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-600">Trend</span>
-              <span className={`text-sm font-medium ${getTrendColor(metric.trend)}`}>
+              <span className="text-lg text-slate-700">Trend</span>
+              <span className={`text-lg font-medium ${getTrendColor(metric.trend)}`}>
                 {metric.trend.charAt(0).toUpperCase() + metric.trend.slice(1)}
               </span>
             </div>

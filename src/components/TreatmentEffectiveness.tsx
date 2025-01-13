@@ -14,9 +14,9 @@ export default function TreatmentEffectiveness() {
         <thead>
           <tr>
             <th className="px-6 py-3 text-left text-lg font-medium text-white uppercase tracking-wider">Treatment</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Success Rate</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Avg. Duration</th>
-            <th className="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Cost Effectiveness</th>
+            <th className="px-6 py-3 text-left text-lg font-medium text-white uppercase tracking-wider">Success Rate</th>
+            <th className="px-6 py-3 text-left text-lg font-medium text-white uppercase tracking-wider">Avg. Duration</th>
+            <th className="px-6 py-3 text-left text-lg font-medium text-white uppercase tracking-wider">Cost Effectiveness</th>
           </tr>
         </thead>
         <tbody className="bg-slate-400 divide-y divide-gray-200">

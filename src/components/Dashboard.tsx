@@ -15,15 +15,15 @@ export default function Dashboard() {
 
   return (
     <div className="max-h-full max-w-full bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="mb-8 min-h-32 bg-indigo-950 py-10">
+      <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* <div className="mb-8 min-h-32 bg-indigo-950 py-10">
           <h1 className="text-5xl font-bold text-white text-center">Healthcare Analytics Dashboard</h1>
           <p className="mt-2 text-white text-center text-2xl">Track patient outcomes and treatment effectiveness</p>
-        </div>
+        </div> */}
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {summaryMetrics.map((metric) => (
-            <MetricsCard key={metric.title} {...metric} />
+            <MetricsCard  key={metric.title} {...metric} />
           ))}
         </div>
 
@@ -38,8 +38,8 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-xl font-semibold mb-4">Resource Utilization</h2>
+        <div className="bg-orange-200 rounded-lg shadow p-6">
+          <h2 className="text-2xl font-semibold mb-4">Resource Utilization</h2>
           <UtilizationMetrics />
         </div>
       </div>
