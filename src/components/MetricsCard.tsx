@@ -10,7 +10,7 @@ interface MetricsCardProps {
 
 export default function MetricsCard({ title, value, icon: Icon, trend }: MetricsCardProps) {
   const isPositive = trend.startsWith('+');
-  
+
   return (
     <div className="bg-indigo-300 rounded-lg shadow h-80 w-70 p-6">
       <div className="flex items-center justify-between">

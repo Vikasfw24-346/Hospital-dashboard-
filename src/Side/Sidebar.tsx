@@ -66,7 +66,7 @@
 
 
 
-import React, { useState, ReactNode } from 'react';
+import React, { useState, ReactNode, useEffect } from 'react';
 import {
     FaTh,
     FaBars,
@@ -77,12 +77,20 @@ import {
 import { NavLink } from 'react-router-dom';
 
 interface SidebarProps {
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
+    onUpdate: Function;
     children: ReactNode;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ children }) => {
+const Sidebar: React.FC<SidebarProps> = ({ onUpdate, children }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => setIsOpen(!isOpen);
+    const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        onUpdate(isOpen);
+    }, [isOpen]);
+
     const menuItem = [
         {
             path: "/",
@@ -106,20 +114,46 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         }
     ];
 
+    useEffect(() => {
+        const handleResize = () => {
+            setViewportWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, []);
+
+    let w = "";
+    let marginL = "";
+
+    if (isOpen && viewportWidth <= 545) {
+        w = viewportWidth + "px";
+        marginL = (viewportWidth - 125) + "px";
+    } else if (isOpen && viewportWidth > 545) {
+        w = "260px";
+        marginL = "140px";
+    } else if (!isOpen) {
+        w = "50px";
+        marginL = "0px";
+    }
+
     return (
         <div className="container">
-            <div style={{ width: isOpen ? "260px" : "50px" }} className="sidebar">
+            <div style={{ minWidth: w }} className="sidebar">
                 <div className="top_section">
-                    <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Logo</h1>
-                    <div style={{ marginLeft: isOpen ? "140px" : "0px" }} className="bars">
+                    <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Menu</h1>
+                    <div style={{ marginLeft: marginL }} className="bars">
                         <FaBars onClick={toggle} />
                     </div>
                 </div>
                 {
                     menuItem.map((item, index) => (
-                        <NavLink 
-                            to={item.path} 
-                            key={index} 
+                        <NavLink
+                            to={item.path}
+                            key={index}
                             className={({ isActive }) => isActive ? "link active" : "link"}
                         >
                             <div className="icon">{item.icon}</div>
