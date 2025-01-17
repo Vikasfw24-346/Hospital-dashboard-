@@ -55,33 +55,33 @@ export default function Dashboard() {
           <p className="mt-2 text-white text-center text-2xl">Track patient outcomes and treatment effectiveness</p>
         </div> */}
             <Routes>
-              <Route path="/" element={<div style={{ display: displayF ? "block" : "none" }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <Route path="/" element={<div style={{ display: displayF ? "grid" : "none" }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {summaryMetrics.map((metric) => (
                   <MetricsCard key={metric.title} {...metric} />
                 ))}
               </div>} />
 
-              <Route path="/metricsCard" element={<div style={{ display: displayF ? "block" : "none" }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+              <Route path="/metricsCard" element={<div style={{ display: displayF ? "grid" : "none" }} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
                 {summaryMetrics.map((metric) => (
                   <MetricsCard key={metric.title} {...metric} />
                 ))}
               </div>} />
 
-              <Route path="/outcomesChart" element={<div style={{ display: displayF ? "block" : "none" }} className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              <Route path="/outcomesChart" element={<div style={{ display: displayF ? "grid" : "none" }} className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div className="bg-gray-400 rounded-lg shadow p-6">
                   <h2 className=" text-slate-50 text-2xl font-semibold mb-4 ">Patient Outcomes Trend</h2>
                   <OutcomesChart />
                 </div>
               </div>} />
 
-              <Route path="/treatmentEffectiveness" element={<div style={{ display: displayF ? "block" : "none" }} className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+              <Route path="/treatmentEffectiveness" element={<div style={{ display: displayF ? "grid" : "none" }} className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
                 <div className="bg-sky-300  rounded-lg shadow p-6">
                   <h2 className="text-2xl text-slate-50 font-semibold mb-4">Treatment Effectiveness</h2>
                   <TreatmentEffectiveness />
                 </div>
               </div>} />
 
-              <Route path="/utilizationMetrics" element={<div style={{ display: displayF ? "block" : "none" }} className="bg-orange-200 rounded-lg shadow p-6">
+              <Route path="/utilizationMetrics" element={<div style={{ display: displayF ? "grid" : "none" }} className="bg-orange-200 rounded-lg shadow p-6">
                 <h2 className="text-2xl font-semibold mb-4">Resource Utilization</h2>
                 <UtilizationMetrics />
               </div>} />

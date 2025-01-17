@@ -162,7 +162,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onUpdate, children }) => {
                     ))
                 }
             </div>
-            <main>{children}</main>
+            {<main style={{ display: ((isOpen && viewportWidth <= 545)) ? "none" : "grid" }}>{children}</main>}
         </div>
     );
 };
