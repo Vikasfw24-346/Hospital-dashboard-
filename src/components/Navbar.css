@@ -1,0 +1,41 @@
+#container-1 {
+    display: flex;
+    flex-direction: row;
+    min-height: 8rem;
+    background-color: rgb(30 27 75 / var(--tw-bg-opacity, 1));
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    min-width: 100%;
+}
+
+#container-2 {
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+}
+
+#heading-1 {
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    text-align: center;
+}
+
+#paragraph-1 {
+    margin-top: 0.5rem;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+#cardiogram-1 {
+    display: flex;
+    position: absolute;
+    background-color: black;
+    height: 16.666667%;
+    top: 20px;
+    right: 20px;
+    min-width: 200px;
+}

@@ -1,0 +1,19 @@
+#cardiogram-monitor {
+    display: flex;
+    background-color: grey;
+    min-width: 100%;
+    min-height: 100%;
+    color: white;
+    border-radius: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+#screen {
+    display: flex;
+    background-color: white;
+    min-width: 96%;
+    min-height: 93%;
+    max-width: 96%;
+    max-height: 93%;
+}
